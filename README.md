@@ -4,7 +4,7 @@ a sudoku solver written in C++
 ## build
 
 ```bash
-meson setup builddir -Db_ndebug=true
+meson setup builddir -Db_coverage=true -Db_ndebug=true
 ```
 
 ## compile

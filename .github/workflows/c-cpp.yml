@@ -13,9 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: setup
-      run: meson setup builddir -Db_ndebug=true 
-    - name: compile
-      run: meson compile -C builddir
-    - name: test
-      run: meson test -C builddir --verbose
+    - uses: actions/setup-python@v5
+    - uses: BSFishy/meson-build@v1.0.3
+      with:
+        action: test
+        directory: build
+        setup-options: -Db_coverage=true -Db_ndebug=true
+        options: --verbose
+
