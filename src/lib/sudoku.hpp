@@ -1,5 +1,5 @@
-#include <string>
+#include <nlohmann/json.hpp>
 
-using std::string;
+using nlohmann::json;
 
-bool is_valid_sudoku_content(const string& content);
+bool is_valid_sudoku_content(const json& content);

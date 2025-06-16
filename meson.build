@@ -18,7 +18,7 @@ dep_sudoku = declare_dependency(
 
 executable('sudoku-solver-app',
   'src/app/main.cpp',
-  dependencies: [dep_sudoku],
+  dependencies: [dep_sudoku, nlohmann_json_dep],
   install: true)
 
 test_exe = executable('test_sudoku',
