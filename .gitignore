@@ -34,4 +34,5 @@
 .vscode
 builddir
 subprojects/googletest-1.17.0
+subprojects/nlohmann_json-3.12.0
 subprojects/packagecache
