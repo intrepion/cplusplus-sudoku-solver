@@ -30,3 +30,8 @@
 *.exe
 *.out
 *.app
+
+.vscode
+builddir
+subprojects/googletest-1.17.0
+subprojects/packagecache
