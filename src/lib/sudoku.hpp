@@ -2,4 +2,4 @@
 
 using std::string;
 
-string get_hello_message();
+bool is_valid_sudoku_json(const string& filename);
