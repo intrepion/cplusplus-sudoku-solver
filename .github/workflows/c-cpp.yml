@@ -1,9 +1,9 @@
 name: C/C++ CI
 
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
+  push:
     branches: [ "main" ]
 
 jobs:
@@ -13,11 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
-    - name: configure
-      run: ./configure
-    - name: make
-      run: make
-    - name: make check
-      run: make check
-    - name: make distcheck
-      run: make distcheck
+    - name: setup
+      run: meson setup builddir -Db_ndebug=true 
+    - name: compile
+      run: meson compile -C builddir
+    - name: test
+      run: meson test -C builddir --verbose
