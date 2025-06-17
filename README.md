@@ -1,7 +1,13 @@
 # cplusplus-sudoku-solver
-a sudoku solver written in C++
+a sudokpy -m u solver written in C++
 
 [![C/C++ CI](https://github.com/intrepion/cplusplus-sudoku-solver/actions/workflows/c-cpp.yml/badge.svg?branch=main)](https://github.com/intrepion/cplusplus-sudoku-solver/actions/workflows/c-cpp.yml)
+
+## install Meson
+
+```bash
+py -m pip install meson ninja
+```
 
 ## build
 
@@ -24,5 +30,5 @@ meson test -C builddir --verbose
 ## run
 
 ```bash
-./builddir/cplusplus-sudoku-solver input_puzzle.json
+./builddir/cplusplus-sudoku-solver examples/classic/leetcode1.json
 ```
