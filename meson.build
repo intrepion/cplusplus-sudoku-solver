@@ -3,7 +3,6 @@ project('sudoku-solver', 'cpp',
   default_options : ['warning_level=3'])
 
 cpp = meson.get_compiler('cpp')
-
 if cpp.get_id() == 'msvc'
   add_project_arguments('/std:c++latest', language: 'cpp')
 else
@@ -12,7 +11,8 @@ endif
 
 cmake = import('cmake')
 gtest_proj = cmake.subproject('gtest')
-gtest_dep = gtest_proj.dependency('gtest_main')
+gtest_lib_dep = gtest_proj.dependency('gtest')
+gtest_main_dep = gtest_proj.dependency('gtest_main')
 json_dep = dependency('nlohmann_json', fallback: ['nlohmann_json', 'nlohmann_json_dep'])
 inc_dirs = include_directories('src/lib')
 
@@ -33,6 +33,6 @@ executable('sudoku-solver-app',
 
 test_exe = executable('test_sudoku',
   'tests/test_sudoku.cpp',
-  dependencies : [dep_sudoku, gtest_dep, json_dep])
+  dependencies : [dep_sudoku, gtest_lib_dep, gtest_main_dep, json_dep])
 
 test('Sudoku Tests', test_exe)

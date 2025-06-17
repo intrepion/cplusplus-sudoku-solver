@@ -3,16 +3,10 @@ a sudokpy -m u solver written in C++
 
 [![C/C++ CI](https://github.com/intrepion/cplusplus-sudoku-solver/actions/workflows/c-cpp.yml/badge.svg?branch=main)](https://github.com/intrepion/cplusplus-sudoku-solver/actions/workflows/c-cpp.yml)
 
-## install Meson
-
-```bash
-py -m pip install meson ninja
-```
-
 ## build
 
 ```bash
-meson setup builddir -Db_ndebug=true
+meson setup builddir
 ```
 
 ## compile
