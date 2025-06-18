@@ -9,10 +9,7 @@ else
   add_project_arguments('-std=c++23', language: 'cpp')
 endif
 
-cmake = import('cmake')
-gtest_proj = cmake.subproject('gtest')
-gtest_lib_dep = gtest_proj.dependency('gtest')
-gtest_main_dep = gtest_proj.dependency('gtest_main')
+test_dep = dependency('doctest', fallback: ['doctest', 'doctest_dep'])
 json_dep = dependency('nlohmann_json', fallback: ['nlohmann_json', 'nlohmann_json_dep'])
 inc_dirs = include_directories('src/lib')
 
@@ -33,6 +30,6 @@ executable('sudoku-solver-app',
 
 test_exe = executable('test_sudoku',
   'tests/test_sudoku.cpp',
-  dependencies : [dep_sudoku, gtest_lib_dep, gtest_main_dep, json_dep])
+  dependencies : [dep_sudoku, test_dep, json_dep])
 
 test('Sudoku Tests', test_exe)
