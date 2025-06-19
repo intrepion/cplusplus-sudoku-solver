@@ -33,6 +33,5 @@
 
 .vscode
 builddir
-subprojects/doctest-2.4.12
-subprojects/nlohmann_json-3.12.0
-subprojects/packagecache
+subprojects/*
+!subprojects/*.wrap

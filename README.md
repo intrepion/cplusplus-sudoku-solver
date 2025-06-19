@@ -24,6 +24,6 @@ meson test -C builddir --verbose
 ## run
 
 ```bash
-./builddir/sudoku-solver-app examples/classic/leetcode1.json
+./builddir/sudoku-solver-app examples/classic/leetcode/testcase1.json
 ```
 
